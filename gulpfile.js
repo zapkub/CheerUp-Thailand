@@ -56,8 +56,11 @@ gulp.task('build:server',['copy:styles','copy:assets','copy:meta'],function(){
           //     }))
           .pipe(gulp.dest("dist"));
 });
-
-gulp.task('build',['build:server'], function(callback){
+gulp.task('build:html',['clean'],function(){
+  return gulp.src('./src/index.html',{base:'./src'})
+    .pipe(gulp.dest('./dist'))
+})
+gulp.task('build',['build:html'], function(callback){
     webpack(prodConfig, function(err, stats){
       if(err) throw new gutil.PluginError("webpack", err);
         gutil.log("[webpack]", stats.toString({
