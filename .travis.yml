@@ -7,6 +7,7 @@ before_script:
 env:
   - PRODUCTION=TRUE
 install:
+  - npm install -g typings
   - typings install
   - npm install
 script: gulp build
