@@ -46,4 +46,12 @@ export default {
       sourceURI: 'Judo1.png',
     },
   ],
+  messageList: [
+    'สู้ๆจ้ะ',
+    'ไฟท์จ้ะ',
+    'อะไรวะจ้ะ',
+    'Fight to',
+    'fightka',
+    'sliknpot',
+  ],
 };

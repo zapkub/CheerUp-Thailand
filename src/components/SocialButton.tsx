@@ -23,11 +23,10 @@ const GoogleButton = (props: IButtonPropsType) => (
 
 const FacebookButton = (props: IButtonPropsType) => (
     <div
-        className={classNames(styles.facebookBtn, styles.btn)}
+        className={classNames(styles.facebookBtn, styles.btn, styles.gradient)}
         onClick={props.onClick}
     >
         <div className={styles.wrap} >
-            <i className='fi-social-facebook'></i>
             {props.text}
         </div>
     </div>

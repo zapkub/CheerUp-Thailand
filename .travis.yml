@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "6"
+before_script:
+  - npm install -g gulp typings
+env:
+  - PRODUCTION=TRUE
+install:
+  -npm install
+script: gulp build

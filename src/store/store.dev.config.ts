@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
 
 
@@ -16,7 +16,7 @@ export default function configureStore(preloadedState): Redux.Store {
     preloadedState,
     compose(
       applyMiddleware(thunk, createLogger() ),
-      applyMiddleware(routerMiddleware(browserHistory)),
+      applyMiddleware(routerMiddleware(hashHistory)),
       typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? window.devToolsExtension() : f => f
     )
   );

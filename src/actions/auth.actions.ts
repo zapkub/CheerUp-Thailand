@@ -15,6 +15,7 @@ export interface IFBUserInfo {
 export const setUserInfo = ReduxActions.createAction<IFBUserInfo, IFBUserInfo>(DONE_AUTHEN_TO_FACEBOOK);
 export const isFBloading = ReduxActions.createAction<boolean, boolean>(IS_AUTHEN_LOADING);
 
+
 export const checkFacebookSession = () => dispatch => {
     dispatch(isFBloading(true));
     FB.getLoginStatus(function(Response): void{
@@ -23,13 +24,20 @@ export const checkFacebookSession = () => dispatch => {
           dispatch(setUserInfo(response as IFBUserInfo));
           dispatch(isFBloading(false));
         });
+      } else {
+          dispatch(isFBloading(false));
       }
     });
 };
 
 export const loginWithFacebook = () => dispatch => {
-    FB.login(function(fbResponse): void {
+    FB.login(function(fbResponse: any): void {
         console.log(fbResponse);
+        if (fbResponse.status === 'connected') {
+            dispatch(checkFacebookSession());
+        }else {
+            dispatch(isFBloading(false));
+        }
     });
 };
 

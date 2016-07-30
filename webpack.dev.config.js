@@ -66,6 +66,11 @@ module.exports = {
         exclude:/node_modules/,
         loaders:['file-loader']
       },
+      {
+        test:/\.png$/,
+        exclude:/node_modules/,
+        loaders:['file-loader']
+      },
       { test: /\.node$/, loader: 'node' },
       // { test: /tests/, loaders: ['ignore'] }
     ]

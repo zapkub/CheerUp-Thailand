@@ -1,0 +1,16 @@
+.bannerContainer {
+  display:flex;
+  padding:30px;
+  // background:url('../assets/images/Welcome-bg.png');
+  justify-content: space-between;
+  align-items: center;
+  img{
+    &.athele {
+      width:60%;
+    }
+    &.logo {
+      width:40%;
+      box-sizing: border-box;
+    }
+  }
+}
