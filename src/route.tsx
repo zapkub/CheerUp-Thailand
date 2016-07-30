@@ -1,11 +1,8 @@
 import * as React from 'react';
 import {Router, Route, IndexRedirect, IndexRoute} from 'react-router';
 import Home from './container/home';
-class App extends React.Component<any, any> {
-  return(): JSX.Element {
-    return (<div></div>);
-  }
-}
+import App from './App';
+import './actions/auth.actions';
 
 
 export default (

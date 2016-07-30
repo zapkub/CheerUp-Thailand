@@ -1,0 +1,55 @@
+
+
+.btn {
+	width:300px;
+	padding:5px 0 5px 5px;
+	margin:5px 0;
+	transition: .22s ease-in-out all;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: inset 0px 0.5px 1px rgba(white,0.6);
+	.wrap {
+		display:flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.google-btn {
+	
+	line-height: 1;
+	background:#bd2f32;
+	cursor:pointer;
+	color:white;
+	border-radius:3px;
+	border:darken(#bd2f32,20) 1px solid;
+	
+	i {
+		&:before{
+				font-size:28px;
+		}
+		margin-right:5px;
+	}
+	&:hover{
+		background: lighten(#bd2f32,10);
+	}
+}
+
+.facebookBtn {
+	line-height: 1;
+	background:#324bb0;
+	cursor:pointer;
+	color:white;
+	border-radius:3px;
+	border:darken(#324bb0,20) 1px solid;
+	i {
+    margin-right:5px;
+		&:before{
+				font-size:28px;
+		}	
+	}
+	&:hover{
+		background: lighten(#324bb0,10);
+	}
+}

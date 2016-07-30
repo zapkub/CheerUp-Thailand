@@ -1,4 +1,5 @@
 /// <reference path="globals/classnames/index.d.ts" />
+/// <reference path="globals/fbsdk/index.d.ts" />
 /// <reference path="globals/history/index.d.ts" />
 /// <reference path="globals/isomorphic-fetch/index.d.ts" />
 /// <reference path="globals/mime/index.d.ts" />

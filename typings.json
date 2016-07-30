@@ -1,6 +1,7 @@
 {
   "globalDependencies": {
     "classnames": "registry:dt/classnames#0.0.0+20160316155526",
+    "fbsdk": "registry:dt/fbsdk#0.0.0+20160524084205",
     "history": "registry:dt/history#1.8.0+20160316155526",
     "isomorphic-fetch": "registry:dt/isomorphic-fetch#0.0.0+20160524142046",
     "mime": "registry:dt/mime#0.0.0+20160316155526",

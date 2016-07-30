@@ -3,11 +3,13 @@ var webpack = require('webpack');
 var config = require('./app.config.js');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var autoprefixer = require('autoprefixer');
+
+process.env.HMRPORT = 8080;
 module.exports = {
   entry: [
     'babel-polyfill',
     // 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
-    'webpack-dev-server/client?http://127.0.0.1:3000/',
+    'webpack-dev-server/client?http://127.0.0.1:' + (process.env.HMRPORT || 3000),
     'webpack/hot/only-dev-server',
     './src/index.tsx'
   ],
@@ -81,15 +83,11 @@ module.exports = {
         DEVELOPMENT:true,
         BROWSER: JSON.stringify(true)
       }
-    }),
-    new HtmlWebpackPlugin({
-      title: config.name,
-      template: 'template.html'
     })
   ],
   devtool: 'inline-source-map',
   devServer: {
-    // contentBase: 'http://localhost:3000',
+    contentBase: './src',
     publicPath: '/bundle/',
     stats: 'errors-only',
     hot: true,
