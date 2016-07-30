@@ -6,5 +6,5 @@ before_script:
 env:
   - PRODUCTION=TRUE
 install:
-  -npm install
+  - npm install
 script: gulp build
