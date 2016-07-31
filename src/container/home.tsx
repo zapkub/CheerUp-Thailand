@@ -15,6 +15,7 @@ interface IHomeProps {
 }
 
 export class Home extends React.Component<IHomeProps, {}> {
+
   render(): JSX.Element {
     return (
     <div className= {styles.container} >

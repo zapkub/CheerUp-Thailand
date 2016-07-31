@@ -1,0 +1,58 @@
+.routing-enter {
+  opacity: 0.01;
+  position:absolute; 
+  width: 100%;
+  box-sizing:border-box;
+  left:50%;
+  transform: translate(-50%,0);
+}
+
+.routing-enter.routing-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+  
+}
+
+.routing-leave {
+  opacity: 1;
+  // position:absolute;
+}
+
+.routing-leave.routing-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #3ca7da;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3282d1;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #328afc;
+}
+::-webkit-scrollbar-track {
+  background: #d0d0d0;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #b8b8b8;
+}
+::-webkit-scrollbar-track:active {
+  background: #ababab;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

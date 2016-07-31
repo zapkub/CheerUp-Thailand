@@ -33,8 +33,13 @@ function mapDispatchToProps(dispatch) {
     next: () => {
       dispatch(push('/message'));
     },
-    selectAthele: (athele?: number) => {
-      dispatch(ResultActions.setAtheleIndex(Atheles.athleleList[athele]));
+    selectAthele: (atheleIndex?: number) => {
+      ga('send', 'event', {
+                eventCategory: 'athele',
+                eventAction: 'select',
+                eventLabel: Atheles[atheleIndex],
+      });
+      dispatch(ResultActions.setAtheleIndex(Atheles.athleleList[atheleIndex]));
     },
   };
 }

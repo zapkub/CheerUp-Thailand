@@ -13,9 +13,9 @@ import { syncHistoryWithStore } from 'react-router-redux';
 // different store in dev , prod
 let Store: any = {};
 if (process.env.DEVELOPMENT) {
-  Store = require( './store/store.dev.config.ts').default;
-}else {
-  Store = require( './store/store.prod.config.ts').default;
+  Store = require('./store/store.dev.config.ts').default;
+} else {
+  Store = require('./store/store.prod.config.ts').default;
 }
 
 const initialState = (window as any).__INITIAL_STATE__;
@@ -23,21 +23,35 @@ const initialState = (window as any).__INITIAL_STATE__;
 const store = Store(initialState);
 const history = syncHistoryWithStore(hashHistory, store);
 
-window.fbAsyncInit = function(): void {
-    console.log('init FB with Redux');
-    FB.init(
+window.onload = function(): void {
+    window.fbAsyncInit = function (): void {
+      console.log('init FB with Redux');
+      FB.init(
         {
-            appId      : config.fbAppId,
-            xfbml      : true,
-            version    : 'v2.0',
+          appId: config.fbAppId,
+          xfbml: true,
+          version: 'v2.0',
         }
-    );
-    store.dispatch(AuthActions.checkFacebookSession());
+      );
+      store.dispatch(AuthActions.checkFacebookSession(
+        function (): void {
+          document.getElementById('root').style.opacity = '1';
+          render(
+            <Provider store={store}>
+              <Router history={history} routes={routes} />
+            </Provider>,
+            document.getElementById('root')
+          );
+        }
+      ));
+    };
 };
 
-render(
-  <Provider store={store}>
-    <Router history={history} routes={routes} />
-  </Provider>,
-  document.getElementById('root')
-);
+// send page view stats
+hashHistory.listen( (location)  => {
+  // console.log('change route to ' + location.pathname);
+  ga('send', {
+    hitType: 'pageview',
+    page: location.pathname,
+  });
+});

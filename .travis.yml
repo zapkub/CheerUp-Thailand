@@ -10,3 +10,5 @@ before_script:
   - npm install
   - typings install
 script: gulp build
+after_success:
+  - gulp deploy

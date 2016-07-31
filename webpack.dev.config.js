@@ -100,6 +100,6 @@ module.exports = {
     //   '*': 'http://127.0.0.1:' + (process.env.PORT || 3001)
     // },
     headers: {'Access-Control-Allow-Origin': '*'},
-    // host: '127.0.0.1'
+    host: '127.0.0.1'
   }
 };

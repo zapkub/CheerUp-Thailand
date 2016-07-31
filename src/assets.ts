@@ -4,11 +4,14 @@ export default {
       name: 'Amanda baba',
       previewURI: 'P1.png',
       sourceURI: 'Bmx1.png',
+      sportTitle: 'นักกีฬา อะไรสักอย่าง',
+      right: true,
     },
     {
       name: 'Napis Tortungpanich',
       previewURI: 'P2.png',
       sourceURI: 'shooting1.png',
+      right: true,
     },
     {
       name: 'Panipak Wongpattanakit',
@@ -19,6 +22,7 @@ export default {
       name: 'Boonsak Ponsana',
       previewURI: 'P4.png',
       sourceURI: 'badminton1.png',
+      right: true,
     },
     {
       name: 'Ratchanok Intanon',
@@ -29,6 +33,7 @@ export default {
       name: 'Keerati Bualong',
       previewURI: 'P6.png',
       sourceURI: 'Boat1.png',
+      right: false,
     },
     {
       name: 'Sutiya Jiewchaloemmit',
@@ -47,7 +52,7 @@ export default {
     },
   ],
   messageList: [
-    'สู้ๆจ้ะ',
+    'คุณคือ%20“ ซุปเปอร์แมน ”%20สัญชาติไทย',
     'ไฟท์จ้ะ',
     'อะไรวะจ้ะ',
     'Fight to',

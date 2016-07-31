@@ -5,11 +5,11 @@
 	padding:5px 0 5px 5px;
 	margin:5px 0;
 	font-weight: light;
-	transition: .22s ease-in-out all;
+	transition: .11s ease-in-out all;
 	display:flex;
 	align-items: center;
 	justify-content: center;
-	box-shadow: inset 0px 0.5px 1px rgba(white,0.6);
+	box-shadow:  0px 1.5px 3px rgba(black,0.3);
 	.wrap {
 		display:flex;
 		align-items: center;
@@ -38,14 +38,16 @@
 }
 
 .facebookBtn {
+	text-shadow: 0px 1px 2px rgba(black,0.5);
 	line-height: 1;
 	font-size:28px;
 	font-weight: lighter;
 	background:#324bb0;
 	cursor:pointer;
 	color:white;
+	margin:0 10px;
 	border-radius:3px;
-	border:darken(#324bb0,20) 1px solid;
+	border:darken(#324bb0,10) 1px solid;
 	padding:10px 5px;
 	i {
     margin-right:5px;
@@ -53,9 +55,9 @@
 				font-size:28px;
 		}	
 	}
-	// &:hover{
-	// 	background: lighten(#324bb0,10);
-	// }
+	&:hover{
+		transform: scale(1.1);
+	}
 }
 
 
@@ -68,8 +70,6 @@ background: -o-linear-gradient(top, rgba(89,144,188,1) 0%, rgba(14,93,157,1) 100
 background: -ms-linear-gradient(top, rgba(89,144,188,1) 0%, rgba(14,93,157,1) 100%);
 background: linear-gradient(to bottom, rgba(89,144,188,1) 0%, rgba(14,93,157,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5990bc', endColorstr='#0e5d9d', GradientType=0 );
-opacity: 0.7;
-	&:hover {
-		opacity: 1;
-	}
+
+
 }

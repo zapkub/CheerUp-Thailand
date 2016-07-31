@@ -5,7 +5,8 @@ const styles = require('../styles/button.scss');
 
 interface IButtonPropsType {
     text: string;
-    onClick(): void;
+    width?: number;
+    onClick?(): void;
 }
 
 const GoogleButton = (props: IButtonPropsType) => (
@@ -23,8 +24,16 @@ const GoogleButton = (props: IButtonPropsType) => (
 
 const FacebookButton = (props: IButtonPropsType) => (
     <div
+        style={ (props.width) ? {width: props.width} : undefined }
         className={classNames(styles.facebookBtn, styles.btn, styles.gradient)}
-        onClick={props.onClick}
+        onClick={ (e) => {
+            ga('send', 'event', {
+                eventCategory: 'user',
+                eventAction: 'click',
+                eventLabel: props.text,
+            });
+            props.onClick();
+        }}
     >
         <div className={styles.wrap} >
             {props.text}

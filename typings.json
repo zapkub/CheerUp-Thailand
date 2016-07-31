@@ -1,12 +1,17 @@
 {
   "globalDependencies": {
+    "chai": "registry:dt/chai#3.4.0+20160601211834",
     "classnames": "registry:dt/classnames#0.0.0+20160316155526",
     "fbsdk": "registry:dt/fbsdk#0.0.0+20160524084205",
+    "google.analytics/ga": "registry:dt/google.analytics/ga#0.0.0+20160317120654",
     "history": "registry:dt/history#1.8.0+20160316155526",
     "isomorphic-fetch": "registry:dt/isomorphic-fetch#0.0.0+20160524142046",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "mocha": "registry:dt/mocha#2.2.5+20160720003353",
     "node": "registry:dt/node#6.0.0+20160728152422",
     "react": "registry:dt/react#0.14.0+20160621225615",
+    "react-addons-css-transition-group": "registry:dt/react-addons-css-transition-group#0.14.0+20160316155526",
+    "react-addons-transition-group": "registry:dt/react-addons-transition-group#0.14.0+20160701001352",
     "react-dom": "registry:dt/react-dom#0.14.0+20160412154040",
     "react-redux": "registry:dt/react-redux#4.4.0+20160501125835",
     "react-router": "registry:dt/react-router#2.0.0+20160621215300",

@@ -16,26 +16,32 @@ export const setUserInfo = ReduxActions.createAction<IFBUserInfo, IFBUserInfo>(D
 export const isFBloading = ReduxActions.createAction<boolean, boolean>(IS_AUTHEN_LOADING);
 
 
-export const checkFacebookSession = () => dispatch => {
+export const checkFacebookSession = (callback?: Function) => dispatch => {
     dispatch(isFBloading(true));
-    FB.getLoginStatus(function(Response): void{
-      if (Response.status === 'connected') {
-        FB.api('/me?fields=id,name,email', 'get', function(response): void{
-          dispatch(setUserInfo(response as IFBUserInfo));
-          dispatch(isFBloading(false));
-        });
-      } else {
-          dispatch(isFBloading(false));
-      }
+    FB.getLoginStatus(function (Response): void {
+        if (Response.status === 'connected') {
+            FB.api('/me?fields=id,name,email', 'get', function (response): void {
+                dispatch(setUserInfo(response as IFBUserInfo));
+                dispatch(isFBloading(false));
+                if (callback) {
+                    callback(Response);
+                }
+            });
+        } else {
+            dispatch(isFBloading(false));
+            if (callback) {
+                    callback(Response);
+            }
+        }
     });
 };
 
 export const loginWithFacebook = () => dispatch => {
-    FB.login(function(fbResponse: any): void {
+    FB.login(function (fbResponse: any): void {
         console.log(fbResponse);
         if (fbResponse.status === 'connected') {
             dispatch(checkFacebookSession());
-        }else {
+        } else {
             dispatch(isFBloading(false));
         }
     });

@@ -4,4 +4,26 @@
 .message {
   display:flex;
   flex-direction:column;
+  padding-bottom:0px;
+}
+.atheleFrame {
+  border:4px #035b9f solid;
+  img {
+    display:block;
+  }
+}
+
+.nameContainer {
+  margin-bottom:10px;
+}
+.name {
+  font-size:28px;
+  font-weight: bolder;
+  color:#035b9f;
+  margin-bottom:10px;
+}
+.sportTitle {
+  font-size:22px;
+  font-weight:lighter;
+  color:lighten(#035b9f,0);
 }

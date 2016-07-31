@@ -1,22 +1,35 @@
 @import './_global.scss';
   .item {
-    // width:33.333333333%;
+    width:33.333333333%;
     display: flex;
     padding:5px;
     box-sizing: border-box;
     justify-content: center;
     $borderSize: 5px;
     cursor:pointer;
-    
-    img{
-      transition: linear all 0.11s;
+    position: relative;
+    .frame {
       border:$borderSize white solid;
-      opacity: 0.8;
+      transition: linear all 0.11s;
+    }
+    &:hover, &.selected {
+      .frame{
+        border:$borderSize $textColor solid;
+      }
+          
+    }
+    img{
+      max-width:100%;
+      display:flex;
+      height:auto;
+      
+      
+      opacity: 0;
     }
     &:hover, &.selected {
       img {
-        opacity: 1;
-        border:$borderSize $textColor solid;
+        opacity: 0;
+        
       }
     }
   }

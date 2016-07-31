@@ -13,9 +13,12 @@ export const MessageList = (props: IPropsType) => (
     {
       props.lists.map(
         (item, key) =>
-        (<div onClick={ () => props.onChange(key) } className={classNames(styles.item,{
+        (<div
+          onClick={ () => props.onChange(key) }
+          className={classNames(styles.item,{
           [`${styles.selected}`]: props.index === key,
-        })} key={key}>{item}</div>)
+          [`${styles.gradient}`]: props.index === key,
+        })} key={key}>{item.replace(new RegExp('%20','g'),' ')}</div>)
       )
     }
     </div>

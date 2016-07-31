@@ -10,7 +10,7 @@ module.exports = {
   output: {
     libraryTarget:"var",
     path: path.join(__dirname, 'dist/bundle'),
-    publicPath: '/bundle/',
+    publicPath: 'bundle/',
     filename: 'bundle.js'
   },
   resolve: {
@@ -77,7 +77,7 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env":{
         'NODE_ENV': JSON.stringify('production'),
-        DEVELOPMENT: false,
+        PRODUCTION: true,
         BROWSER: JSON.stringify(true)
       }
     })
