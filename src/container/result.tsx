@@ -10,6 +10,8 @@ import * as ResultActions from '../actions/result.actions';
 import { Sponsor, HashTag } from '../components/HashTag';
 import { FacebookButton } from '../components/SocialButton';
 // import '../utils/canvasToBlob';
+import * as saveAs from '../utils/FileSaver';
+// const saveAs  = require('../utils/FileSaver.js');
 const styles = require('../styles/result.scss');
 
 interface IResultPropsType {
@@ -29,6 +31,14 @@ class Result extends React.Component<IResultPropsType, {}> {
     const canvas: HTMLCanvasElement = (this.refs as any).canvas as HTMLCanvasElement;
     this.props.shareToFB(canvas);
   }
+  saveToFile (): void {
+    const canvas: HTMLCanvasElement = (this.refs as any).canvas as HTMLCanvasElement;
+
+    (canvas as any).toBlob((blob) => {
+      saveAs(blob, 'Cheerup.png');
+    });
+
+  }
   render(): JSX.Element {
     return (
       <div className={styles.container} >
@@ -39,7 +49,7 @@ class Result extends React.Component<IResultPropsType, {}> {
           </div>
         </div>
         <div className={styles.controlWrap}>
-          <FacebookButton width={150} text={`Save ภาพ`} />
+          <FacebookButton width={150} text={`Save ภาพ`} onClick={this.saveToFile.bind(this)} />
           <FacebookButton width={150} text={`Share`} onClick={ this.handleShare.bind(this)} />
           <FacebookButton width={150} onClick={this.props.startOver} text={`เริ่มเล่นใหม่`} />
         </div>
