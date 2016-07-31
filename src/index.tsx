@@ -23,32 +23,31 @@ const initialState = (window as any).__INITIAL_STATE__;
 const store = Store(initialState);
 const history = syncHistoryWithStore(hashHistory, store);
 
-window.onload = function(): void {
-    window.fbAsyncInit = function (): void {
-      console.log('init FB with Redux');
-      FB.init(
-        {
-          appId: config.fbAppId,
-          xfbml: true,
-          version: 'v2.0',
-        }
-      );
-      store.dispatch(AuthActions.checkFacebookSession(
-        function (): void {
-          document.getElementById('root').style.opacity = '1';
-          render(
-            <Provider store={store}>
-              <Router history={history} routes={routes} />
-            </Provider>,
-            document.getElementById('root')
-          );
-        }
-      ));
-    };
+window.onload = function (): void {
+  document.getElementById('root').style.opacity = '1';
+  render(
+    <Provider store={store}>
+      <Router history={history} routes={routes} />
+    </Provider>,
+    document.getElementById('root')
+  );
 };
-
+window.fbAsyncInit = function (): void {
+  console.log('init FB with Redux');
+  FB.init(
+    {
+      appId: config.fbAppId,
+      xfbml: true,
+      version: 'v2.0',
+    }
+  );
+  store.dispatch(AuthActions.checkFacebookSession(
+    function (): void {
+    }
+  ));
+};
 // send page view stats
-hashHistory.listen( (location)  => {
+hashHistory.listen((location) => {
   // console.log('change route to ' + location.pathname);
   ga('send', {
     hitType: 'pageview',
