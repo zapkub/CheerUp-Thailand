@@ -53,11 +53,11 @@ const drawUserInfo = (image: HTMLImageElement, positionX: number, positionY: num
 
 const drawCheerMessage = (message: string, positionX: number, positionY: number, context: CanvasRenderingContext2D) => {
     context.fillStyle = 'white';
-    const fontSize = 80;
+    const fontSize = 72;
     const messageWidth = 600;
     context.font = '' + fontSize + 'px Sukhumvit Set, thaisans_neueregular';
     let lineNumber = 0;
-
+    message = `“ ${message} ”`;
     for ( let line of message.split('%20') ){
       const lineWidth = context.measureText(line);
       context.fillText(line, (positionX + messageWidth / 2) - lineWidth.width / 2 , positionY + ((fontSize + 30) * lineNumber));
@@ -77,12 +77,12 @@ export const drawResult = (canvasElement: HTMLCanvasElement) => async (dispatch,
   const canvasSize = {w: 1200 / 2, h: 675 / 2};
   const canvas: HTMLCanvasElement = canvasElement;
   const context = canvas.getContext('2d');
-  let textPosition = {x: 50, y: 250};
+  let textPosition = {x: 50, y: 280};
   let userInfoPosition = {x: 50, y: 80 };
   // postion 
   if (Athele.right) {
-    textPosition = {x: 600, y: 300};
-    userInfoPosition = {x: 600, y: 130};
+    textPosition = {x: 560, y: 330};
+    userInfoPosition = {x: 560, y: 130};
   }
 
   // support retina

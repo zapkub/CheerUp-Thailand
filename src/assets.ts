@@ -1,62 +1,83 @@
 export default {
   athleleList: [
     {
-      name: 'Amanda baba',
+      name: 'อแมนด้า คาร์',
+      name_en: 'Ratchanok Intanon',
       previewURI: 'P1.png',
       sourceURI: 'Bmx1.png',
-      sportTitle: 'นักกีฬา อะไรสักอย่าง',
+      sportTitle: 'บีเอ็มเอ็กซ์',
       right: true,
     },
     {
-      name: 'Napis Tortungpanich',
+      name: 'นภิศ ต่อตั้งพานิช',
       previewURI: 'P2.png',
+      sportTitle: 'ยิงปืน',
       sourceURI: 'shooting1.png',
       right: true,
     },
     {
-      name: 'Panipak Wongpattanakit',
+      name: 'พาณิภัค วงศ์พัฒนกิจ',
       previewURI: 'P3.png',
+      sportTitle: 'เทควอนโด',
       sourceURI: 'tewando1.png',
     },
     {
-      name: 'Boonsak Ponsana',
+      name: 'บุญศักดิ์ พลสนะ',
       previewURI: 'P4.png',
       sourceURI: 'badminton1.png',
+      sportTitle: 'แบดมินตัน',
       right: true,
     },
     {
-      name: 'Ratchanok Intanon',
+      name: 'รัชนก อินทนนท์',
       previewURI: 'P5.png',
+      sportTitle: 'แบดมินตัน',
       sourceURI: 'badminton2.png',
     },
     {
-      name: 'Keerati Bualong',
+      name: 'กีระติ บัวลง',
       previewURI: 'P6.png',
+      sportTitle: 'เรือใบ',
       sourceURI: 'Boat1.png',
       right: false,
     },
     {
-      name: 'Sutiya Jiewchaloemmit',
+      name: 'สุธิยา จิวเฉลิมมิตร',
       previewURI: 'P7.png',
+      'sportTitle': 'ยิงปืน',
       sourceURI: 'shooting2.png',
     },
     {
-      name: 'Top',
+      name: 'วุฒิชัย มาสุข',
       previewURI: 'P8.png',
+      sportTitle: 'มวยสากล',
       sourceURI: 'boxing1.png',
     },
     {
-      name: 'Pete Kunathip',
+      name: 'คุณาธิป เยี่ยอ้น',
       previewURI: 'P9.png',
+      sportTitle: 'ยูโด',
       sourceURI: 'Judo1.png',
     },
   ],
   messageList: [
-    'คุณคือ%20“ ซุปเปอร์แมน ”%20สัญชาติไทย',
-    'ไฟท์จ้ะ',
-    'อะไรวะจ้ะ',
-    'Fight to',
-    'fightka',
-    'sliknpot',
+    'ไทยไม่เชียร์ไทย%20แล้วใครจะเชียร์เรา',
+    'จะทุ่มแรงเชียร์%20ให้ได้เท่า…ความทุ่มเท%20ของพวกคุณ'
+    , 'ไกลแค่ไหน%2060ล้านแรงใจ%20ก็ไปถึง'
+    , 'เชียร์สุดใจ%20คนไทยไม่ทิ้งกัน'
+    , 'ไม่ได้ไปเชียร์%20ติดขอบสนาม%20แต่ถ่ายทอดสดตี 3 %20ก็จะรอ'
+    , 'ขอบคุณที่พวกคุณ%20ได้สานฝันให้%20คนไทยทั้งประเทศ'
+    , 'งานดีขนาดนี้%20ไทยแลนด์%20โอนลี่'
+    , 'ส่งคู่แข่งกลับบ้านไป%20ส่งเหรียญใหญ่%20กลับบ้านเรา'
+    , 'หน้าตาดีกว่า%20พระเอกซีรีส์%20ก็มีแต่นักกีฬาไทย'
+    , 'ปั่นให้ไกล…%20ไปถึงแชมป์%20เลยนะหยอง'
+    , 'ตัวต่อตัวไม่มีรุม%20ขอให้ทุ่มคว่ำไป%20ทุกรอบเลย'
+    , 'คุณคือ%20“ซุปเปอร์แมน”%20สัญชาติไทย'
+    , 'อันดับ 1 ของโลก%20และ%20 1 ในใจคนไทย'
+    , 'กระแสน้ำมีขึ้นมีลง%20แต่กำลังใจที่ส่งไป%20มั่นคงนะจะบอกให้'
+    , 'ทุ่มแรงใจให้พีท…%20ทุ่มคู่แข่งให้น็อค%20ไปเลย!!!'
+    , 'ต่อยให้คว่ำ!%20แล้วคว้าแชมป์%20กลับมานะ'
+    , 'ยิงเป้าให้พรุน%20ลุ้นแชมป์ให้ได้!!'
+    , 'จับปืนให้มั่น%20เล็งเป้าให้แม่น%20แชมป์อยู่แค่เอื้อม',
   ],
 };

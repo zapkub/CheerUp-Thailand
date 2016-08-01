@@ -29,7 +29,7 @@ class Message extends React.Component<IMessagePropsType , {}> {
             {this.props.athele.name}
             </div>
             <div className={styles.sportTitle}>
-              {this.props.athele.sportTitle}
+              {`นักกีฬา${this.props.athele.sportTitle}ทีมชาติไทย`}
             </div>
           </div>
           <div className={styles.atheleFrame}>

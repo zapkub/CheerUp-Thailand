@@ -9,29 +9,32 @@ document.getElementById('mocha').appendChild(result);
 
 describe('Result Actions', () => {
   it('Should able to draw result correctly', (done) => {
-    const UserInfo: IFBUserInfo = {id: '1035661829797688', name: 'Tester Naja', email: 'tester@test.com'};
-    Assets.athleleList.map( item => {
-      const canvas: HTMLCanvasElement = document.createElement('canvas');
-      result.appendChild(canvas);
-      const getState = () => {
-        return {
-          result: {
-            athele: item,
-            message: Assets.messageList[0],
-          },
-          auth: {
-            userInfo: UserInfo,
-            profilePictureURL: `https://graph.facebook.com/1035661829797688/picture?type=large&width=720&height=720`,
-          },
+    const UserInfo: IFBUserInfo = { id: '1035661829797688', name: 'Tester Naja', email: 'tester@test.com' };
+    Assets.messageList.map((msg) => {
+      Assets.athleleList.map(item => {
+        const canvas: HTMLCanvasElement = document.createElement('canvas');
+        result.appendChild(canvas);
+        const getState = () => {
+          return {
+            result: {
+              athele: item,
+              message: msg,
+            },
+            auth: {
+              userInfo: UserInfo,
+              profilePictureURL: `https://graph.facebook.com/1035661829797688/picture?type=large&width=720&height=720`,
+            },
+          };
         };
-      };
 
-      // init thunk action
-      const thunk = ResultActions.drawResult(canvas);
-      thunk(undefined, getState);
-      canvas.style.width = '300px';
-      canvas.style.height = 'auto';
-      canvas.style.margin = '10px 10px';
+
+        // init thunk action
+        const thunk = ResultActions.drawResult(canvas);
+        thunk(undefined, getState);
+        canvas.style.width = '300px';
+        canvas.style.height = 'auto';
+        canvas.style.margin = '10px 10px';
+      });
     });
     done();
   });
