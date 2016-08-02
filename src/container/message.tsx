@@ -29,7 +29,7 @@ class Message extends React.Component<IMessagePropsType , {}> {
   render(): JSX.Element {
     return (
       <div className={classNames(styles.container)} >
-         <img style={{height: '150px',padding: '20px'}} src={require('../assets/images/Welcome-logo.png')} />
+         <img className={styles.mainLogo} src={require('../assets/images/Welcome-logo.png')} />
          <div className={classNames(styles.wrap,styles.message)}>
           <div className={styles.nameContainer}>
             <div className={styles.name}>

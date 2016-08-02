@@ -92,8 +92,8 @@ export const drawResult = (canvasElement: HTMLCanvasElement) => async (dispatch,
   context.scale(2, 2);
   canvas.width = canvasSize.w * 2;
   canvas.height = canvasSize.h * 2;
-  canvas.style.width = canvasSize.w + 'px';
-  canvas.style.height = canvasSize.h + 'px';
+  // canvas.style.width = canvasSize.w + 'px';
+  // canvas.style.height = canvasSize.h + 'px';
 
   // begin draw
   context.fillStyle = 'black';

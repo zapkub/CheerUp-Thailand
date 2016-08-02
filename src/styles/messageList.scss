@@ -6,6 +6,10 @@
   box-sizing: border-box;
   overflow: hidden;
   min-width: 450px;
+  @media screen and (max-width: 640px) {
+    min-width:0px;
+    width:100%;
+  }
   &:before {
     content: " ";
     position: absolute;
@@ -39,6 +43,10 @@
       font-size: 24px;
       transition: all 0.11s linear;
       border: solid 2px rgba(#035b9f, 0);
+      @media screen and (max-width: 640px) {
+        font-size:12px;
+        padding: 5px 10px;
+      }
       &:hover {
         border-radius: 50px;
         background: rgba(#035b9f, 0.1);

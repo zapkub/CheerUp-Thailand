@@ -10,7 +10,7 @@ if (process.env.PRODUCTION) {
   module.exports = {
     name: "Cheer Up",
     fbAppId: "667832946653119",
-    redirectURL: 'http://thesecretfarm.com/cheerup/',
+    redirectURL: 'http://www.cheerthai.co/facebook/cheerthaibanner/',
     shareInfo
   }
 }else {

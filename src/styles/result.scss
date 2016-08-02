@@ -3,9 +3,14 @@
 .controlWrap{
   display:flex;
   flex-direction: row;
-  
-}
+  @media screen and (max-width: 640px) { 
+    flex-direction: column;
+  }
 
+}
+.resultCanvas{
+  width:100%;
+}
 
 .resultFrame {
   position:relative;

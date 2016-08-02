@@ -49,6 +49,11 @@
 	border-radius:3px;
 	border:darken(#324bb0,10) 1px solid;
 	padding:10px 5px;
+	@media screen and (max-width:640px){
+		font-size:18px;
+		width:140px;
+		margin:5px auto;
+	}
 	i {
     margin-right:5px;
 		&:before{

@@ -16,7 +16,7 @@ interface IAthele  {
 class Athele extends React.Component<IAthele, any> {
   render(): JSX.Element {
     return (<div className={styles.container} >
-      <img style={{height: '150px',padding: '20px'}} src={require('../assets/images/Welcome-logo.png')} />
+      <img className={styles.mainLogo} src={require('../assets/images/Welcome-logo.png')} />
       <AtheleList list={Atheles.athleleList} onChange={this.props.selectAthele} />
       <FacebookButton text={`เลือกภาพ`} onClick={this.props.next} />
       <Sponsor />

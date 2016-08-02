@@ -45,7 +45,7 @@ class Result extends React.Component<IResultPropsType, {}> {
         <img style={{height: '150px',padding: '20px'}} src={require('../assets/images/Welcome-logo.png')} />
         <div className={styles.wrap} >
           <div className={styles.resultFrame} >
-            <canvas ref='canvas' />
+            <canvas className={styles.resultCanvas} ref='canvas' />
           </div>
         </div>
         <div className={styles.controlWrap}>

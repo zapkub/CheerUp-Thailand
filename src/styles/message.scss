@@ -1,34 +1,52 @@
 @import './_global.scss';
 @import './atheleList.scss';
-
 .message {
-  display:flex;
-  flex-direction:column;
-  padding-bottom:0px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0px;
 }
+
 .atheleFrame {
-  border:4px #035b9f solid;
+  border: 4px #035b9f solid;
+  margin-bottom:20px;
   img {
-    display:block;
+    display: block;
+    @media screen and (max-width: 640px) {
+      width: 120px;
+    }
   }
 }
 
 .nameContainer {
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
+
 .name {
-  font-size:28px;
+  font-size: 28px;
   font-weight: bolder;
-  color:#035b9f;
-  margin-bottom:10px;
+  color: #035b9f;
+  margin-bottom: 10px;
+  @media screen and (max-width: 640px) {
+    font-size:20px;
+  }
 }
+
 .sportTitle {
-  font-size:22px;
-  font-weight:lighter;
-  color:lighten(#035b9f,0);
+  font-size: 22px;
+  font-weight: lighter;
+  color: lighten(#035b9f, 0);
+  @media screen and (max-width: 640px) {
+    font-size:14px;
+  }
 }
 
 .buttonWrap {
-  display:flex;
+  display: flex;
   flex-direction: row;
+  @media screen and (max-width: 640px) {
+   display:block;
+   div {
+     margin:5px auto;
+   }
+  }
 }
