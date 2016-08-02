@@ -1,9 +1,10 @@
 import * as Setting from '../../app.config';
 import * as fetch from 'isomorphic-fetch';
-const shareToFB = () => { };
+import * as AppActions from './app.actions';
 
 
-export const uploadToServer = async (canvas: HTMLCanvasElement) => {
+
+const uploadToServer = async (canvas: HTMLCanvasElement) => {
   const data = canvas.toDataURL('image/jpeg', 0.6);
   const encodedjpg = data.substring(data.indexOf(',') + 1, data.length);
 
@@ -35,4 +36,9 @@ export const uploadToServer = async (canvas: HTMLCanvasElement) => {
   //     alert('Share สำเร็จแล้ว!');
   //   }
   // });
+};
+
+export  const shareToFB = (canvas: HTMLCanvasElement) => dispatch => {
+  dispatch(AppActions.showLoading());
+  uploadToServer(canvas);
 };

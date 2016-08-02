@@ -12,7 +12,11 @@
   transition: opacity 500ms ease-in;
   
 }
-
+#root{
+  background:url('../assets/images/bg-decorate.png');
+  background-repeat: no-repeat;
+  background-size:cover;
+  }
 .routing-leave {
   opacity: 1;
   // position:absolute;

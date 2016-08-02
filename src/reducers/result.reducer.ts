@@ -21,6 +21,13 @@ export const result = (state: IResultState, action: ReduxActions.Action<any> ) =
       nextState.messageIndex = action.payload;
       nextState.message = Assets.messageList[action.payload];
       break;
+    case ResultActions.MESSAGE_MOVE_DOWN :
+      nextState.messageIndex = nextState.messageIndex > 0 ? state.messageIndex - 1 : 0;
+      nextState.message = Assets.messageList[nextState.messageIndex];
+      break;
+    case ResultActions.MESSAGE_MOVE_UP :
+      nextState.messageIndex = Assets.messageList.length - 1 > state.messageIndex ? state.messageIndex + 1 : Assets.messageList.length - 1;
+      nextState.message = Assets.messageList[nextState.messageIndex];
     default:
     break;
   }

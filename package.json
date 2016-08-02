@@ -33,6 +33,7 @@
     "gulp-babel": "^6.1.2",
     "gulp-clean": "^0.3.2",
     "gulp-nodemon": "^2.1.0",
+    "gulp-sftp": "^0.1.5",
     "gulp-typescript": "^2.13.6",
     "gulp-util": "^3.0.7",
     "html-loader": "^0.4.3",

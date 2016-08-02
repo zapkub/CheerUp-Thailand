@@ -1,53 +1,62 @@
 @import './_global.scss';
 @import './button.scss';
-
 .messageList {
   text-align: center;
-  position:relative;
+  position: relative;
   box-sizing: border-box;
-  overflow:hidden;
+  overflow: hidden;
   min-width: 450px;
   &:before {
-    content:" ";
-    position:absolute;
-    box-shadow:0px 0px 70px rgba(black, 0.3);
-    z-index:1;
-    width:70%;
-    height:50px;
-    left:50%;
-    top:0;
+    content: " ";
+    position: absolute;
+    box-shadow: 0px 0px 70px rgba(black, 0.3);
+    z-index: 1;
+    width: 70%;
+    height: 50px;
+    left: 50%;
+    top: 0;
     transform: translate( -50%, -100%);
   }
   &:after {
-    content:" ";
-    position:absolute;
-    box-shadow:0px 0px 70px rgba(black, 0.3);
-    z-index:1;
-    width:70%;
-    height:50px;
-    left:50%;
-    bottom:0;
+    content: " ";
+    position: absolute;
+    box-shadow: 0px 0px 70px rgba(black, 0.3);
+    z-index: 1;
+    width: 70%;
+    height: 50px;
+    left: 50%;
+    bottom: 0;
     transform: translate( -50%, 100%);
   }
   .scroll {
-    overflow-y:scroll; 
-    padding:20px;
-    height:160px;
+    overflow-y: scroll;
+    padding: 20px;
+    height: 160px;
     .item {
-      cursor:pointer;
-      padding:10px 15px;
-      color:lightgrey;
-      font-size:24px;
+      cursor: pointer;
+      padding: 10px 15px;
+      color: grey;
+      font-size: 24px;
       transition: all 0.11s linear;
-      border:solid 2px rgba(#035b9f,0);
-      
+      border: solid 2px rgba(#035b9f, 0);
+      &:hover {
+        border-radius: 50px;
+        background: rgba(#035b9f, 0.1);
+      }
       &.selected {
-        color:white;
-        border-radius:50px;
-        border:solid 2px #035b9f;
-        text-shadow: 0px 1px 2px rgba(black,0.5);
+        color: white;
+        border-radius: 50px;
+        border: solid 2px #035b9f;
+        text-shadow: 0px 1px 2px rgba(black, 0.5);
+        background: rgba(89, 144, 188, 1);
+        background: -moz-linear-gradient(top, rgba(89, 144, 188, 1) 0%, rgba(14, 93, 157, 1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(89, 144, 188, 1)), color-stop(100%, rgba(14, 93, 157, 1)));
+        background: -webkit-linear-gradient(top, rgba(89, 144, 188, 1) 0%, rgba(14, 93, 157, 1) 100%);
+        background: -o-linear-gradient(top, rgba(89, 144, 188, 1) 0%, rgba(14, 93, 157, 1) 100%);
+        background: -ms-linear-gradient(top, rgba(89, 144, 188, 1) 0%, rgba(14, 93, 157, 1) 100%);
+        background: linear-gradient(to bottom, rgba(89, 144, 188, 1) 0%, rgba(14, 93, 157, 1) 100%);
+        // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#5990bc', endColorstr='#0e5d9d', GradientType=0);
       }
     }
   }
-
 }

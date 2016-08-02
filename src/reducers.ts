@@ -5,5 +5,6 @@ import { routerReducer } from 'react-router-redux';
 
 import { auth } from './reducers/auth.reducer';
 import { result } from './reducers/result.reducer';
-const rootReducers = combineReducers({auth, result, routing: routerReducer});
+import { app } from './reducers/app.reducer';
+const rootReducers = combineReducers({auth, app, result, routing: routerReducer});
 export default rootReducers;

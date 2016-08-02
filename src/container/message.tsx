@@ -17,8 +17,15 @@ interface IMessagePropsType extends ReactRouter.RouteComponentProps<{}, {}> {
   selectedIndex: number;
   next(): void;
   handleMessageSelect(index: number): void;
+  handleKeyPress(e: KeyboardEvent): void;
 }
 class Message extends React.Component<IMessagePropsType , {}> {
+  componentDidMount(): void {
+    document.addEventListener('keydown', this.props.handleKeyPress.bind(this), false);
+  }
+  componentWillUnmount(): void {
+    document.removeEventListener('keydown', this.props.handleKeyPress.bind(this));
+  }
   render(): JSX.Element {
     return (
       <div className={classNames(styles.container)} >
@@ -37,7 +44,10 @@ class Message extends React.Component<IMessagePropsType , {}> {
           </div>
           <MessageList onChange={this.props.handleMessageSelect} lists={Assets.messageList} index={this.props.selectedIndex} />
          </div>
-         <FacebookButton text={`เลือกแรงเชียร์`} onClick={ this.props.next }/>
+         <div className={styles.buttonWrap} >
+          <FacebookButton width={120} text={`ย้อนกลับ`} onClick={ this.props.next }/>
+          <FacebookButton text={`เลือกแรงเชียร์`} onClick={ this.props.next }/>
+         </div>
         <HashTag />
         <Sponsor />
       </div>
@@ -45,14 +55,23 @@ class Message extends React.Component<IMessagePropsType , {}> {
   }
 };
 
-function mapStateToProps(store) {
+function mapStateToProps(store): any {
   return {
     athele: store.result.athele,
     selectedIndex: store.result.messageIndex,
   };
 }
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch): any {
   return {
+    handleKeyPress: (e) => {
+      const code = e.keyCode || e.which || e.key ;
+      console.log(code);
+      if (code === 38) {
+        dispatch({type: ResultActions.MESSAGE_MOVE_DOWN});
+      } else if (code === 40) {
+        dispatch({type: ResultActions.MESSAGE_MOVE_UP});
+      }
+    },
     handleMessageSelect: (index: number) => {
       ga('send', 'event', {
                 eventCategory: 'message',

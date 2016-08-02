@@ -61,7 +61,7 @@
 }
 
 
-.gradient {
+.gradient, .gradient.selected {
 background: rgba(89,144,188,1);
 background: -moz-linear-gradient(top, rgba(89,144,188,1) 0%, rgba(14,93,157,1) 100%);
 background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(89,144,188,1)), color-stop(100%, rgba(14,93,157,1)));

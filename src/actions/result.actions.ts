@@ -1,6 +1,7 @@
 import * as ReduxActions from 'redux-actions';
 import { AtheleObject } from '../components/AtheleList';
 import * as AuthActions from '../actions/auth.actions';
+import * as AppActions from './app.actions';
 
 
 async function loadImageURL (url: string): Promise<HTMLImageElement> {
@@ -19,6 +20,8 @@ async function loadImageURL (url: string): Promise<HTMLImageElement> {
 
 export const SET_CURRENT_ATHELE = 'SET_CURRENT_ATHELE';
 export const SET_CURRENT_MESSAGE = 'SET_CURRENT_MESSAGE';
+export const MESSAGE_MOVE_DOWN = 'MESSAGE_MOVE_DOWN';
+export const MESSAGE_MOVE_UP = 'MESSAGE_MOVE_UP';
 
 export const setAtheleIndex = ReduxActions.createAction<AtheleObject, AtheleObject>(SET_CURRENT_ATHELE);
 export const setMessageIndex = ReduxActions.createAction<number, number>(SET_CURRENT_MESSAGE);
@@ -66,7 +69,7 @@ const drawCheerMessage = (message: string, positionX: number, positionY: number,
 };
 
 export const drawResult = (canvasElement: HTMLCanvasElement) => async (dispatch, getState) => {
-
+  dispatch(AppActions.showLoading());
   // user meta
   const Athele: AtheleObject = getState().result.athele;
   const UserInfo: AuthActions.IFBUserInfo = getState().auth.userInfo;
@@ -120,8 +123,10 @@ export const drawResult = (canvasElement: HTMLCanvasElement) => async (dispatch,
   const footerText = `Cr.  \uf1c4  ${Athele.name}`;
   const atheleNameWidth = context.measureText(footerText).width;
   context.fillText(footerText, canvas.width - atheleNameWidth - 10, canvas.height - 10);
-
+  dispatch(AppActions.hideLoading());
   } catch (e) {
+    dispatch(AppActions.hideLoading());
+    alert('เกิดความผิดพลาด ลอง Refreshใหม่นะ' + e.toString());
     // TODO : Manange request exception
   }
 };

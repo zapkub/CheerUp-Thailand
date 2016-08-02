@@ -73,7 +73,7 @@ function mapDispatchToProps(dispatch) {
       dispatch(push('/home'));
     },
     shareToFB: (canvas: HTMLCanvasElement) => {
-      ShareActions.uploadToServer(canvas);
+      dispatch(ShareActions.shareToFB(canvas));
     },
   };
 }

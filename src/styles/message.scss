@@ -27,3 +27,8 @@
   font-weight:lighter;
   color:lighten(#035b9f,0);
 }
+
+.buttonWrap {
+  display:flex;
+  flex-direction: row;
+}
