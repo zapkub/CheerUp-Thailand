@@ -12,3 +12,5 @@ before_script:
 script: gulp build
 after_success:
   - gulp deploy
+notifications:
+  slack: rungsikavarnich:gNm3pL1k70jxyDYZgjMpguIR

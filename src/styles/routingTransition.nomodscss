@@ -3,13 +3,12 @@
   position:absolute; 
   width: 100%;
   box-sizing:border-box;
-  left:50%;
-  transform: translate(-50%,0);
+  
 }
 
 .routing-enter.routing-enter-active {
   opacity: 1;
-  transition: opacity 500ms ease-in;
+  transition: all 500ms ease-in;
   
 }
 #root{
