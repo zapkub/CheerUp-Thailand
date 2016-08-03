@@ -8,11 +8,16 @@
     $borderSize: 5px;
     cursor:pointer;
     position: relative;
+    opacity: 0.6;
     .frame {
       border:$borderSize white solid;
       transition: linear all 0.11s;
     }
-    &:hover, &.selected {
+    &:hover{
+      opacity: 1;
+    }
+    &.selected {
+      opacity: 1;
       .frame{
         border:$borderSize $textColor solid;
       }

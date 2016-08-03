@@ -60,7 +60,9 @@ const drawCheerMessage = (message: string, positionX: number, positionY: number,
     const messageWidth = 600;
     context.font = '' + fontSize + 'px Sukhumvit Set, thaisans_neueregular';
     let lineNumber = 0;
-    message = `“ ${message} ”`;
+    if (message !== 'คุณคือ%20“ซุปเปอร์แมน”%20สัญชาติไทย') {
+      message = `“ ${message} ”`;
+    }
     for ( let line of message.split('%20') ){
       const lineWidth = context.measureText(line);
       context.fillText(line, (positionX + messageWidth / 2) - lineWidth.width / 2 , positionY + ((fontSize + 30) * lineNumber));

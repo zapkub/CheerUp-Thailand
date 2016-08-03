@@ -35,7 +35,7 @@ class Result extends React.Component<IResultPropsType, {}> {
     const canvas: HTMLCanvasElement = (this.refs as any).canvas as HTMLCanvasElement;
 
     (canvas as any).toBlob((blob) => {
-      saveAs(blob, 'Cheerup.png');
+      saveAs(blob, 'CheerThai.png');
     });
 
   }

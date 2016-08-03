@@ -16,6 +16,7 @@ interface IMessagePropsType extends ReactRouter.RouteComponentProps<{}, {}> {
   athele?: AtheleObject;
   selectedIndex: number;
   next(): void;
+  back(): void;
   handleMessageSelect(index: number): void;
   handleKeyPress(e: KeyboardEvent): void;
 }
@@ -45,7 +46,7 @@ class Message extends React.Component<IMessagePropsType , {}> {
           <MessageList onChange={this.props.handleMessageSelect} lists={Assets.messageList} index={this.props.selectedIndex} />
          </div>
          <div className={styles.buttonWrap} >
-          <FacebookButton width={120} text={`ย้อนกลับ`} onClick={ this.props.next }/>
+          <FacebookButton width={120} text={`ย้อนกลับ`} onClick={ this.props.back }/>
           <FacebookButton text={`เลือกแรงเชียร์`} onClick={ this.props.next }/>
          </div>
         <HashTag />
@@ -83,6 +84,9 @@ function mapDispatchToProps(dispatch): any {
     next: () => {
       dispatch(push('/result'));
     },
+    back: () => {
+      dispatch(push('/athele'));
+    }
   };
 }
 

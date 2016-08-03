@@ -18,20 +18,20 @@ export const isFBloading = ReduxActions.createAction<boolean, boolean>(IS_AUTHEN
 
 export const checkFacebookSession = (callback?: Function) => dispatch => {
     dispatch(isFBloading(true));
-    dispatch(AppActions.showLoading);
+    dispatch(AppActions.showLoading());
     FB.getLoginStatus(function (Response): void {
         if (Response.status === 'connected') {
             FB.api('/me?fields=id,name,email', 'get', function (response): void {
                 dispatch(setUserInfo(response as IFBUserInfo));
                 dispatch(isFBloading(false));
-                dispatch(AppActions.hideLoading);
+                dispatch(AppActions.hideLoading());
                 if (callback) {
                     callback(Response);
                 }
             });
         } else {
             dispatch(isFBloading(false));
-            dispatch(AppActions.hideLoading);
+            dispatch(AppActions.hideLoading());
             if (callback) {
                     callback(Response);
             }

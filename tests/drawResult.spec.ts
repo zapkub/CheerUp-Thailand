@@ -30,7 +30,7 @@ describe('Result Actions', () => {
 
         // init thunk action
         const thunk = ResultActions.drawResult(canvas);
-        thunk(undefined, getState);
+        thunk((action) => { console.log('Dispatch action' + action.type);}, getState);
         canvas.style.width = '300px';
         canvas.style.height = 'auto';
         canvas.style.margin = '10px 10px';

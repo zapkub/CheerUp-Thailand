@@ -20,9 +20,11 @@ export class Home extends React.Component<IHomeProps, {}> {
     return (
     <div className= {styles.container} >
       <Welcome />
-      <div>
-        <UserInfo isLoading={this.props.isLoading} userInfo={this.props.userInfo} />
-      </div>
+{
+      //   <div>
+      //   <UserInfo isLoading={this.props.isLoading} userInfo={this.props.userInfo} />
+      // </div>
+}
       {
         this.props.userInfo ?
         <FacebookButton text={`เริ่มส่งแรงเชียร์`} onClick={this.props.beginCheerUp}/>
