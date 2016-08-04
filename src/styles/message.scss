@@ -28,6 +28,8 @@
   font-weight: bolder;
   color: #035b9f;
   margin-bottom: 10px;
+  transform: scale(1.1,1);
+	letter-spacing: 1.2px;
   @media screen and (max-width: 640px) {
     font-size:20px;
   }
@@ -38,6 +40,8 @@
   font-size: 22px;
   font-weight: lighter;
   color: lighten(#035b9f, 0);
+  transform: scale(1.2,1);
+	letter-spacing: 2px;
   @media screen and (max-width: 640px) {
     font-size:14px;
   }
