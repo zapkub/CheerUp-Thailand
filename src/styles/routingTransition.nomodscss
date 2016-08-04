@@ -3,7 +3,9 @@
   position:absolute; 
   width: 100%;
   box-sizing:border-box;
-  
+  top:0;
+  left:50%;
+  transform:translate(-50%,0);
 }
 
 .routing-enter.routing-enter-active {
@@ -18,7 +20,11 @@
   }
 .routing-leave {
   opacity: 1;
-  // position:absolute;
+  position:absolute;
+  width:100%;
+  top:0;
+  left:50%;
+  transform:translate(-50%,0);
 }
 
 .routing-leave.routing-leave-active {

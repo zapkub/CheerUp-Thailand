@@ -44,7 +44,7 @@ export default {
     {
       name: 'สุธิยา จิวเฉลิมมิตร',
       previewURI: 'P7.png',
-      'sportTitle': 'เป้าบิน',
+      'sportTitle': 'ยิงปืนเป้าบิน',
       sourceURI: 'shooting2.png',
     },
     {

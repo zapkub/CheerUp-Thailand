@@ -32,8 +32,8 @@ const drawUserInfo = (image: HTMLImageElement, positionX: number, positionY: num
   const PictureSize = { w: 80, h: 80};
   const firstname = UserInfo.name.split(' ')[0];
   const lastname = UserInfo.name.split(' ')[1];
-  const fontSize = 28;
-  context.font = fontSize + 'px Sukhumvit Set, thaisans_neueregular';
+  const fontSize = 38;
+  context.font = fontSize + 'px thaisans_neueregular';
   const firstnameWidth = context.measureText(firstname).width;
   const lastnameWidth = context.measureText(lastname).width;
   const textWidth = (firstnameWidth > lastnameWidth) ? firstnameWidth : lastnameWidth;
@@ -56,9 +56,9 @@ const drawUserInfo = (image: HTMLImageElement, positionX: number, positionY: num
 
 const drawCheerMessage = (message: string, positionX: number, positionY: number, context: CanvasRenderingContext2D) => {
     context.fillStyle = 'white';
-    const fontSize = 72;
+    const fontSize = 90;
     const messageWidth = 600;
-    context.font = '' + fontSize + 'px Sukhumvit Set, thaisans_neueregular';
+    context.font = '' + fontSize + 'px thaisans_neueregular';
     let lineNumber = 0;
     if (message !== 'คุณคือ%20“ซุปเปอร์แมน”%20สัญชาติไทย') {
       message = `“ ${message} ”`;

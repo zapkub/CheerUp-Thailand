@@ -1,5 +1,6 @@
 import * as ReduxActions from 'redux-actions';
 import * as AppActions from './app.actions';
+import * as Config from '../../app.config';
 export const BEGIN_AUTHEN_TO_FACEBOOK = 'BEGIN_AUTHEN_TO_FACEBOOK';
 export const DONE_AUTHEN_TO_FACEBOOK = 'DONE_AUTHEN_TO_FACEBOOK';
 export const FAILED_AUTHEN_TO_FACEVOOK = 'FAILED_AUTHEN_TO_FACEBOOK';
@@ -40,14 +41,17 @@ export const checkFacebookSession = (callback?: Function) => dispatch => {
 };
 
 export const loginWithFacebook = () => dispatch => {
-    FB.login(function (fbResponse: any): void {
-        console.log(fbResponse);
-        if (fbResponse.status === 'connected') {
-            dispatch(checkFacebookSession());
-        } else {
-            dispatch(isFBloading(false));
-        }
-    });
+    window.location.href = `https://www.facebook.com/dialog/oauth?
+  client_id=${Config.fbAppId}
+  &redirect_uri=${Config.redirectURL}`;
+    // FB.login(function (fbResponse: any): void {
+    //     console.log(fbResponse);
+    //     if (fbResponse.status === 'connected') {
+    //         dispatch(checkFacebookSession());
+    //     } else {
+    //         dispatch(isFBloading(false));
+    //     }
+    // });
 };
 
 

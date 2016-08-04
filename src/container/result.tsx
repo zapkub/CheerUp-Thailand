@@ -24,6 +24,11 @@ interface IResultPropsType {
 class Result extends React.Component<IResultPropsType, {}> {
 
   async componentDidMount(): Promise<void> {
+    ga('send', 'event', {
+                eventCategory: 'Result',
+                eventAction: 'select',
+                eventLabel: this.props.athele.name,
+    });
     const canvas: HTMLCanvasElement = (this.refs as any).canvas as HTMLCanvasElement;
     this.props.drawResult(canvas);
   }
