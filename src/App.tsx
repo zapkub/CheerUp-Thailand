@@ -49,6 +49,7 @@ class App extends React.Component<IAppPropsType, {}> {
       <div className={styles.container} >
         <LoadingDialog isActive={this.props.isShowLoading}/>
         <ReactCSSTransitionGroup
+          style={{width:'100%'}}
           component='div'
           transitionName='routing'
           transitionEnterTimeout={500}

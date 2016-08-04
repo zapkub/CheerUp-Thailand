@@ -4,9 +4,13 @@
   min-height: 100vh;
   margin:0 auto;
   padding:5px;
+  position: relative;
   display:flex;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width:640px){
+    max-width:100%;
+  }
 }
 
 .loadingDialogContainer {
