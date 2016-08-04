@@ -90,7 +90,7 @@ if (HTMLCanvasElement && !canvas_proto.toBlob) {
 			, is_base64 = is_base64_regex.test(dataURI.substring(0, header_end))
 			, blob
 		;
-		if ((Blob as any).fake) {
+		if ((Blob).fake) {
 			// no reason to decode a data: URI that's just going to become a data URI again
 			blob = new Blob;
 			if (is_base64) {

@@ -3,7 +3,8 @@
 .message {
   display: flex;
   flex-direction: column;
-  padding-bottom: 0px;
+  padding:20px 10px 0px 10px;
+  
 }
 
 .atheleFrame {
@@ -22,6 +23,7 @@
 }
 
 .name {
+  font-family: 'quarkbold';
   font-size: 28px;
   font-weight: bolder;
   color: #035b9f;
@@ -32,6 +34,7 @@
 }
 
 .sportTitle {
+  font-family: 'quarklight';
   font-size: 22px;
   font-weight: lighter;
   color: lighten(#035b9f, 0);
@@ -44,7 +47,8 @@
   display: flex;
   flex-direction: row;
   @media screen and (max-width: 640px) {
-   display:block;
+   display: flex;
+   flex-direction: column-reverse;
    div {
      margin:5px auto;
    }

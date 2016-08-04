@@ -5,6 +5,7 @@ const styles = require('../styles/button.scss');
 
 interface IButtonPropsType {
     text: string;
+    icon?: boolean;
     width?: number;
     onClick?(): void;
 }
@@ -36,7 +37,7 @@ const FacebookButton = (props: IButtonPropsType) => (
         }}
     >
         <div className={styles.wrap} >
-            {props.text}
+            {props.icon ? <i className='fi-social-facebook' /> : null} {props.text}
         </div>
     </div>
 );

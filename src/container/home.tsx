@@ -29,7 +29,7 @@ export class Home extends React.Component<IHomeProps, {}> {
         this.props.userInfo ?
         <FacebookButton text={`เริ่มส่งแรงเชียร์`} onClick={this.props.beginCheerUp}/>
         :
-        <FacebookButton text='ล๊อกอินด้วย Facebook' onClick={this.props.loginWithFB}/>
+        <FacebookButton icon={true} text='Login ผ่าน Facebook' onClick={this.props.loginWithFB}/>
       }
       <HashTag />
       <Sponsor />

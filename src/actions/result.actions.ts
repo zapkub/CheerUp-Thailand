@@ -31,7 +31,8 @@ const drawUserInfo = (image: HTMLImageElement, positionX: number, positionY: num
   // init constant
   const PictureSize = { w: 80, h: 80};
   const firstname = UserInfo.name.split(' ')[0];
-  const lastname = UserInfo.name.split(' ')[1];
+  const middlename = UserInfo.name.split(' ')[1];
+  const lastname = UserInfo.name.split(' ')[2];
   const fontSize = 38;
   context.font = fontSize + 'px thaisans_neueregular';
   const firstnameWidth = context.measureText(firstname).width;
@@ -39,7 +40,7 @@ const drawUserInfo = (image: HTMLImageElement, positionX: number, positionY: num
   const textWidth = (firstnameWidth > lastnameWidth) ? firstnameWidth : lastnameWidth;
   const totalWidth = textWidth + PictureSize.w;
   const offsetX = (positionX + (600 / 2)) - (totalWidth / 2);
-  console.log(textWidth);
+  // console.log(textWidth);
 
   // draw userProfile
   context.shadowOffsetX = 0;
@@ -50,7 +51,7 @@ const drawUserInfo = (image: HTMLImageElement, positionX: number, positionY: num
   context.textBaseline = 'top';
   context.drawImage(image, offsetX, positionY, PictureSize.w, PictureSize.h);
   context.fillText(firstname, offsetX + PictureSize.w + 20, positionY);
-  context.fillText(lastname, offsetX + PictureSize.w + 20, positionY + (fontSize + 5));
+  context.fillText(middlename + ' ' + (lastname || ''), offsetX + PictureSize.w + 20, positionY + (fontSize + 5));
   context.restore();
 };
 
@@ -76,17 +77,17 @@ export const drawResult = (canvasElement: HTMLCanvasElement) => async (dispatch,
   const Athele: AtheleObject = getState().result.athele;
   const UserInfo: AuthActions.IFBUserInfo = getState().auth.userInfo;
   const profilePictureURL = getState().auth.profilePictureURL;
-  const Message = getState().result.message;
+  const Message = getState().result.messageIndex;
 
   // canvas meta
   const canvasSize = {w: 1200 / 2, h: 675 / 2};
   const canvas: HTMLCanvasElement = canvasElement;
   const context = canvas.getContext('2d');
-  let textPosition = {x: 50, y: 280};
+  let textPosition = {x: 60, y: 100};
   let userInfoPosition = {x: 50, y: 80 };
   // postion 
   if (Athele.right) {
-    textPosition = {x: 560, y: 330};
+    textPosition = {x: 600, y: 140};
     userInfoPosition = {x: 560, y: 130};
   }
 
@@ -112,8 +113,10 @@ export const drawResult = (canvasElement: HTMLCanvasElement) => async (dispatch,
   const hudImage = await loadImageURL(require(`../assets/images/hud.png`));
   context.drawImage(hudImage, 0, 0);
 
-  // Draw Text
-  drawCheerMessage(Message, textPosition.x, textPosition.y, context);
+  // Draw Text ( image )
+  const cheerMsg = await loadImageURL(require(`../assets/images/msg/${Message + 1}.png`));
+  context.drawImage(cheerMsg, textPosition.x, textPosition.y);
+  // drawCheerMessage(Message, textPosition.x, textPosition.y, context);
 
   // UserInfo box
   const profileImage = await loadImageURL(profilePictureURL);
@@ -128,7 +131,7 @@ export const drawResult = (canvasElement: HTMLCanvasElement) => async (dispatch,
   dispatch(AppActions.hideLoading());
   } catch (e) {
     dispatch(AppActions.hideLoading());
-    alert('เกิดความผิดพลาด ลอง Refreshใหม่นะ' + e.toString());
+    alert('เกิดความผิดพลาด ลอง Refresh ใหม่นะ' + e.toString());
     // TODO : Manange request exception
   }
 };

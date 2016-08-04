@@ -11,7 +11,7 @@ import { Sponsor, HashTag } from '../components/HashTag';
 import { FacebookButton } from '../components/SocialButton';
 // import '../utils/canvasToBlob';
 import * as saveAs from '../utils/FileSaver';
-// const saveAs  = require('../utils/FileSaver.js');
+require('../utils/canvasToBlob.js');
 const styles = require('../styles/result.scss');
 
 interface IResultPropsType {

@@ -10,7 +10,7 @@ document.getElementById('mocha').appendChild(result);
 describe('Result Actions', () => {
   it('Should able to draw result correctly', (done) => {
     const UserInfo: IFBUserInfo = { id: '1035661829797688', name: 'Tester Naja', email: 'tester@test.com' };
-    Assets.messageList.map((msg) => {
+    Assets.messageList.map((msg, index) => {
       Assets.athleleList.map(item => {
         const canvas: HTMLCanvasElement = document.createElement('canvas');
         result.appendChild(canvas);
@@ -19,6 +19,7 @@ describe('Result Actions', () => {
             result: {
               athele: item,
               message: msg,
+              messageIndex: index,
             },
             auth: {
               userInfo: UserInfo,
@@ -30,7 +31,7 @@ describe('Result Actions', () => {
 
         // init thunk action
         const thunk = ResultActions.drawResult(canvas);
-        thunk((action) => { console.log('Dispatch action' + action.type);}, getState);
+        thunk((action) => { console.log('Dispatch action' + action.type); }, getState);
         canvas.style.width = '300px';
         canvas.style.height = 'auto';
         canvas.style.margin = '10px 10px';
