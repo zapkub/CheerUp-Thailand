@@ -5,6 +5,7 @@
 /// <reference path="globals/history/index.d.ts" />
 /// <reference path="globals/isomorphic-fetch/index.d.ts" />
 /// <reference path="globals/mime/index.d.ts" />
+/// <reference path="globals/mobile-detect/index.d.ts" />
 /// <reference path="globals/mocha/index.d.ts" />
 /// <reference path="globals/node/index.d.ts" />
 /// <reference path="globals/react-addons-css-transition-group/index.d.ts" />

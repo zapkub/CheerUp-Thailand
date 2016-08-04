@@ -12,7 +12,7 @@ var shareInfo = {
 if (process.env.PRODUCTION) {
   module.exports = {
     name: "เชียร์ไทยสุดใจ ไกลถึงริโอ",
-    fbAppId: "667832946653119",
+    fbAppId: "839141089552242",
     redirectURL: 'http://www.cheerthai.co/facebook/cheerthaibanner/',
     shareInfo
   }

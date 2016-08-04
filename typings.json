@@ -7,6 +7,7 @@
     "history": "registry:dt/history#1.8.0+20160316155526",
     "isomorphic-fetch": "registry:dt/isomorphic-fetch#0.0.0+20160524142046",
     "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "mobile-detect": "registry:dt/mobile-detect#1.2.0+20160316155526",
     "mocha": "registry:dt/mocha#2.2.5+20160720003353",
     "node": "registry:dt/node#6.0.0+20160728152422",
     "react": "registry:dt/react#0.14.0+20160621225615",
