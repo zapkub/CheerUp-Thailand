@@ -41,9 +41,7 @@ export const checkFacebookSession = (callback?: Function) => dispatch => {
 };
 
 export const loginWithFacebook = () => dispatch => {
-    window.location.href = `https://www.facebook.com/dialog/oauth?
-  client_id=${Config.fbAppId}
-  &redirect_uri=${Config.redirectURL}`;
+    window.location.href = `https://www.facebook.com/dialog/oauth?client_id=${Config.fbAppId}&redirect_uri=${Config.redirectURL}`;
     // FB.login(function (fbResponse: any): void {
     //     console.log(fbResponse);
     //     if (fbResponse.status === 'connected') {
