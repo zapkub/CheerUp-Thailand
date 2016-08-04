@@ -37,7 +37,7 @@ const FacebookButton = (props: IButtonPropsType) => (
         }}
     >
         <div className={styles.wrap} >
-            {props.icon ? <i className='fi-social-facebook' /> : null}  <span>{props.text}</span>
+            <span>{props.icon ? <i className='fi-social-facebook' /> : null} {props.text}</span>
         </div>
     </div>
 );
