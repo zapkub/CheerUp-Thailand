@@ -46,8 +46,8 @@ class Message extends React.Component<IMessagePropsType , {}> {
           <MessageList onChange={this.props.handleMessageSelect} lists={Assets.messageList} index={this.props.selectedIndex} />
          </div>
          <div className={styles.buttonWrap} >
-          <FacebookButton width={120} text={`ย้อนกลับ`} onClick={ this.props.back }/>
-          <FacebookButton text={`เลือกแรงเชียร์`} onClick={ this.props.next }/>
+          <FacebookButton width={140} text={`BACK`} onClick={ this.props.back }/>
+          <FacebookButton width={140} text={`เลือกแรงเชียร์`} onClick={ this.props.next }/>
          </div>
         <HashTag />
         <Sponsor />

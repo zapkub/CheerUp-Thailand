@@ -17,7 +17,7 @@ const GoogleButton = (props: IButtonPropsType) => (
     >
     <div className={styles.wrap} >
         <i className='fi-social-google-plus'></i>
-        {props.text}
+        <span>{props.text}</span>
     </div>
 
     </div>
@@ -37,7 +37,7 @@ const FacebookButton = (props: IButtonPropsType) => (
         }}
     >
         <div className={styles.wrap} >
-            {props.icon ? <i className='fi-social-facebook' /> : null} {props.text}
+            {props.icon ? <i className='fi-social-facebook' /> : null}  <span>{props.text}</span>
         </div>
     </div>
 );

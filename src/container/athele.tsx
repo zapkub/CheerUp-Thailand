@@ -18,7 +18,7 @@ class Athele extends React.Component<IAthele, any> {
     return (<div className={styles.container} >
       <img className={styles.mainLogo} src={require('../assets/images/Welcome-logo.png')} />
       <AtheleList list={Atheles.athleleList} onChange={this.props.selectAthele} />
-      <FacebookButton text={`เลือกภาพ`} onClick={this.props.next} />
+      <FacebookButton text={`เลือกภาพนักกีฬา`} onClick={this.props.next} />
       <Sponsor />
     </div>);
   }
