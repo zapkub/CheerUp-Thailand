@@ -80,7 +80,7 @@ export const drawResult = (canvasElement: HTMLCanvasElement) => async (dispatch,
   const Message = getState().result.messageIndex;
 
   // canvas meta
-  const canvasSize = {w: 1200 / 2, h: 675 / 2};
+  const canvasSize = {w: 1200 / 2, h: 630 / 2};
   const canvas: HTMLCanvasElement = canvasElement;
   const context = canvas.getContext('2d');
   let textPosition = {x: 60, y: 100};

@@ -1,5 +1,5 @@
 var shareInfo = {
-  link:'http://thesecretfarm.com/cheerup/',
+  link:'http://www.cheerthai.co/facebook/cheerthaibanner/',
   name: 'เชียร์ไทยสุดใจ ไกลถึงริโอ',
   description: 'ร่วมเป็น 1 ในล้านแรงใจ เป็นแรงเชียร์ให้นักกีฬาไทย คว้าชัยโอลิมปิก',
   title: 'เชียร์ไทยสุดใจ ไกลถึงริโอ',
