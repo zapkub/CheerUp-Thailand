@@ -54,8 +54,8 @@ class Result extends React.Component<IResultPropsType, {}> {
           </div>
         </div>
         <div className={styles.controlWrap}>
-          <FacebookButton width={150} text={`Save ภาพ`} onClick={this.saveToFile.bind(this)} />
-          <FacebookButton width={150} text={`Share`} onClick={ this.handleShare.bind(this)} />
+          <FacebookButton width={150} text={`เซฟ`} onClick={this.saveToFile.bind(this)} />
+          <FacebookButton width={150} text={`แชร์`} onClick={ this.handleShare.bind(this)} />
           <FacebookButton width={150} onClick={this.props.startOver} text={`เริ่มเล่นใหม่`} />
         </div>
         <HashTag />
