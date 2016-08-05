@@ -13,6 +13,7 @@ import { FacebookButton } from '../components/SocialButton';
 import * as saveAs from '../utils/FileSaver';
 require('../utils/canvasToBlob.js');
 const styles = require('../styles/result.scss');
+const MobileDetect = require('mobile-detect');
 
 interface IResultPropsType {
   athele: AtheleObject;
@@ -25,37 +26,46 @@ class Result extends React.Component<IResultPropsType, {}> {
 
   async componentDidMount(): Promise<void> {
     ga('send', 'event', {
-                eventCategory: 'Result',
-                eventAction: 'select',
-                eventLabel: this.props.athele.name,
+      eventCategory: 'Result',
+      eventAction: 'select',
+      eventLabel: this.props.athele.name,
     });
     const canvas: HTMLCanvasElement = (this.refs as any).canvas as HTMLCanvasElement;
     this.props.drawResult(canvas);
   }
-  handleShare (): void {
+  handleShare(): void {
     const canvas: HTMLCanvasElement = (this.refs as any).canvas as HTMLCanvasElement;
     this.props.shareToFB(canvas);
   }
-  saveToFile (): void {
+  saveToFile(): void {
     const canvas: HTMLCanvasElement = (this.refs as any).canvas as HTMLCanvasElement;
+    const md = new MobileDetect(window.navigator.userAgent);
 
     (canvas as any).toBlob((blob) => {
-      saveAs(blob, 'CheerThai.png');
+      // saveAs(blob, 'CheerThai.png');
+      if (md.mobile()) {
+        const url = window.URL.createObjectURL(blob);
+        window.location.href = url;
+      } else {
+        saveAs(blob, 'CheerThai.png');
+      }
     });
+
+
 
   }
   render(): JSX.Element {
     return (
       <div className={styles.container} >
-        <img style={{height: '150px',padding: '20px'}} src={require('../assets/images/Welcome-logo.png')} />
+        <img style={{ height: '150px', padding: '20px' }} src={require('../assets/images/Welcome-logo.png') } />
         <div className={styles.wrap} >
           <div className={styles.resultFrame} >
             <canvas className={styles.resultCanvas} ref='canvas' />
           </div>
         </div>
         <div className={styles.controlWrap}>
-          <FacebookButton width={150} text={`Save ภาพ`} onClick={this.saveToFile.bind(this)} />
-          <FacebookButton width={150} text={`Share`} onClick={ this.handleShare.bind(this)} />
+          <FacebookButton width={150} text={`Save ภาพ`} onClick={this.saveToFile.bind(this) } />
+          <FacebookButton width={150} text={`Share`} onClick={ this.handleShare.bind(this) } />
           <FacebookButton width={150} onClick={this.props.startOver} text={`เริ่มเล่นใหม่`} />
         </div>
         <HashTag />
@@ -82,4 +92,4 @@ function mapDispatchToProps(dispatch) {
     },
   };
 }
-export default connect<{ }, { }, { }>(mapStateToProps, mapDispatchToProps)(Result);
+export default connect<{}, {}, {}>(mapStateToProps, mapDispatchToProps)(Result);
