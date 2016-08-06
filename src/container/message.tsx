@@ -66,7 +66,6 @@ function mapDispatchToProps(dispatch): any {
   return {
     handleKeyPress: (e) => {
       const code = e.keyCode || e.which || e.key ;
-      console.log(code);
       if (code === 38) {
         dispatch({type: ResultActions.MESSAGE_MOVE_DOWN});
       } else if (code === 40) {

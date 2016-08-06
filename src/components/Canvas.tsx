@@ -9,7 +9,7 @@ export const CanvasResultImage = (props: {src: string, show: boolean, onClose():
     })
   }>
     <img src={props.src} /> <br/>
-    {`แตะค้างที่รูปเพื่อ save ภาพได้เลยจ้า`} <br/>
+    {`แตะค้างที่รูปเพื่อ save ภาพ`} <br/>
     <button onClick={props.onClose} >ปิด</button>
   </div>
 );
