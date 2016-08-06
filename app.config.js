@@ -1,7 +1,7 @@
 var shareInfo = {
   link:'http://www.cheerthai.co/facebook/cheerthaibanner/',
   name: 'เชียร์ไทยสุดใจ ไกลถึงริโอ',
-  description: 'ร่วมเป็น 1 ในล้านแรงใจ เป็นแรงเชียร์ให้นักกีฬาไทย คว้าชัยโอลิมปิก',
+  description: 'ส่งแรงใจให้นักกีฬาไทยคว้าชัยโอลิมปิก คลิกเลย!',
   title: 'เชียร์ไทยสุดใจ ไกลถึงริโอ',
   caption: 'www.cheerthai.co',
 }
