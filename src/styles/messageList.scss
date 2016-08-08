@@ -37,17 +37,17 @@
     padding: 20px;
     height: 160px;
     .item {
-      font-family: 'Sukhumvit Set','quarkbold';
+      font-family: 'db_helvethaica_x55_regular';
       cursor: pointer;
-      padding: 10px 15px;
+      padding: 5px 15px;
       color: darken(#d3d3d3,5);
-      font-size: 22px;
+      font-size: 28px;
       font-weight: 500;
       transition: all 0.11s linear;
       border: solid 2px rgba(#035b9f, 0);
       text-shadow: none !important;
       @media screen and (max-width: 640px) {
-        font-size:12px;
+        font-size:22px;
         padding: 5px 10px;
       }
       &:hover {

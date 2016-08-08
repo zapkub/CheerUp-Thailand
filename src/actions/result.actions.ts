@@ -110,8 +110,8 @@ export const drawResult = (canvasElement: HTMLCanvasElement) => async (dispatch,
   context.drawImage(bgImage, 0, 0);
 
   // Draw HUD
-  const hudImage = await loadImageURL(require(`../assets/images/hud.png`));
-  context.drawImage(hudImage, 0, 0);
+  // const hudImage = await loadImageURL(require(`../assets/images/hud.png`));
+  // context.drawImage(hudImage, 0, 0);
 
   // Draw Text ( image )
   const cheerMsg = await loadImageURL(require(`../assets/images/msg/${Message + 1}.png`));
@@ -124,11 +124,13 @@ export const drawResult = (canvasElement: HTMLCanvasElement) => async (dispatch,
 
   // Draw Athele name
 
-  context.font = '18px foundation-icons, Sukhumvit Set, thaisans_neueregular';
-  const footerText = `Cr.  \uf1c4  ${Athele.name}`;
-  const atheleNameWidth = context.measureText(footerText).width;
-  context.fillText(footerText, canvas.width - atheleNameWidth - 10, canvas.height - 10);
+  // context.font = '18px foundation-icons, Sukhumvit Set, thaisans_neueregular';
+  // const footerText = `Cr.  \uf1c4  ${Athele.name}`;
+  // const atheleNameWidth = context.measureText(footerText).width;
+  // context.fillText(footerText, canvas.width - atheleNameWidth - 10, canvas.height - 10);
   dispatch(AppActions.hideLoading());
+
+
   } catch (e) {
     dispatch(AppActions.hideLoading());
     alert('เกิดความผิดพลาด ลอง Refresh ใหม่นะ' + e.toString());
