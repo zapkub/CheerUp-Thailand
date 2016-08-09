@@ -15,6 +15,7 @@ export const MessageList = (props: IPropsType) => (
         (item, key) =>
         (<div
           onClick={ () => props.onChange(key) }
+          style={{display: key === 3 ? 'none' : 'block'}}
           className={classNames(styles.item,{
           [`${styles.selected}`]: props.index === key,
           [`${styles.gradient}`]: props.index === key,
